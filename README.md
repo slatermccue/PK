@@ -26,7 +26,7 @@ to 6 slides when "workOnODP.py" is run.
 ## Background
 
 A teaching tool I have used in the past is Powerpoint Karaoke, where
-the presenter/student is tasked with providing a informative and relevant presentation
+the presenter/student is tasked with providing an informative and relevant presentation
 about our topic (computer science, in our case).  The presentation is usually no longer
 than 5-10 slides, and the time limit is generally set at 6-10 minutes.  The
 kicker is that the presenter has never seen the slide deck before!

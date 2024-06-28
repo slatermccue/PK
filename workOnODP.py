@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # 
 # SYNOPSIS: stripgif.py input.odp output.odp
-# temp usage: workOnODP.py input.odp
+# temp usage: workOnODP.py input.odp output.odp
 '''
 found at:
     <script src="https://gist.github.com/JohannesBuchner/c7ba8f97c6b204cc656a94109f9750eb.js"></script>
@@ -77,10 +77,17 @@ with open('tempXmlData.xml') as newSlide:
     newSlideXml = newSlide.read()
 
 #need to extract the single page from this xml
+#The general process is to find the slide and export to an external file.
+#Then we edit that external file so the page number is correct. In the trial,
+#I exported "page3" to an external file.  I then edited that file to change
+#two instances of "page3" to be "page6" because I knew the new page would
+#be page6.  I then run the program again, reading in the page snippet
+#as slideRoot, which I then append to the presentation namespace.
+
 slideParser = ET.XMLParser(remove_blank_text=True)
 slideRoot = ET.fromstring(newSlideXml, parser=slideParser)
-thisSlideXml = root.xpath('//draw:page', namespaces=nsmap)
-print(slideRoot)
+#thisSlideXml = root.xpath('//draw:page', namespaces=nsmap)
+#print(slideRoot)
 
 
 for slide in root.xpath('//draw:page', namespaces=nsmap):
@@ -89,6 +96,9 @@ for slide in root.xpath('//draw:page', namespaces=nsmap):
     for char in slide.attrib.items():
         print('|-->', char)
         if (char[1] == 'page5'):
+            #I do not yet know if I really need to wait until I see page5 before appending.
+            #Perhaps the program can do its own sorting? Or the append process automagically
+            #appends to the correct place?
             slide.getparent().append(slideRoot)
         #if (char[1] == 'page3'):
         #    tempXmlDataSlide = ET.tostring(slide, pretty_print=True, xml_declaration=True, encoding='UTF-8')
