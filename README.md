@@ -18,7 +18,16 @@ web framework such as Django or T3/Next.js.
 
 ## Current Status
 
-6/28/2024: Still in the exploratory stage.  I have been successful at parsing the XML 
+- 7/1/2024: Currently will add slides to CS-Blank.odp. Each slide is xml
+file tempXmlData.xml, but with page numbers and thumbnails being updated.  
+Since the first slide in CS-Blank has no template, neither do the appended five
+slides have any adornment. Don't know yet if this will be a problem.
+
+  - Next, we need to create a sample presentation with
+three or four slides on it, then create a mechanism to export each slide as its
+own xml data file.  
+
+- 6/28/2024: Still in the exploratory stage.  I have been successful at parsing the XML 
 of the .odp document, saving a slide or "page" as a separate file, then importing that 
 file into a .odp document.  For example, testPresentation.odp is modified from 5 slides 
 to 6 slides when "workOnODP.py" is run.
