@@ -1,4 +1,4 @@
-# Powerpoint Karaoke (PK)
+# Presentation Karaoke (PK)
 
 ## Overview
 
@@ -51,3 +51,5 @@ their slide decks.  It is more useful if the students just may have seen the sli
 already, in the context of the other class.  When they realize they are looking at
 something they may have already seen in Biology, this is the point when the presentation
 becomes "fun" and not simple information regurgitation. 
+
+> Note: I changed the name to "Presentation Karaoke" for obvious reasons.
